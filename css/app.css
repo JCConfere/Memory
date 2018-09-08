@@ -1,0 +1,189 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.timer {
+  margin-right: 24px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.moves {
+  margin-left: 24px;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.modal {
+  width: 50%;
+  color: white;
+  text-align: center;
+  background-color: rgba(15, 25, 35, .95);
+  height: 500px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-close {
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 32px;
+  float: right;
+  margin-right: 24px;
+}
+
+.congrats {
+  border-bottom: 5px solid white;
+  margin-bottom: 24px;
+  top: 10%;
+}
+
+.stats {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 5px solid white;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.replay {
+  width: 96px;
+  height: 48px;
+  background-color: green;
+  font-size: 24px;
+  color: white;
+}
+
+.cancel {
+  width: 96px;
+  height: 48px;
+  background-color: red;
+  font-size: 24px;
+  color: white;
+}
